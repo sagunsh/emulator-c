@@ -24,12 +24,12 @@ void write();        //	si=2
 void terminate();    //	si=3
 void load();
 
-void startexecution();
+void start_execution();
 
-void executeuserprogram();
+void execute_user_program();
 
 int to_int(char, char);    //	convert character to integer
-void clearmemory();        //	clear memory after execution of one program
+void clear_memory();        //	clear memory after execution of one program
 
 int main() {
     fp1 = fopen("input.txt", "r");
@@ -100,7 +100,7 @@ void load() {
     word = 0;
     byte = 0;
     char program[41];
-    clearmemory();
+    clear_memory();
     while (!feof(fp1)) {
         for (i = 0; i < 40; i++) {
             program[i] = getc(fp1);    //	loading program to buffer from input file
@@ -118,7 +118,7 @@ void load() {
         if (strncmp(program, "$AMJ", 4) == 0 || strncmp(program, "$END", 4) == 0)
             continue;
         if (strncmp(program, "$DTA", 4) == 0)
-            startexecution();
+            start_execution();
         for (i = 0; i < 40; i++) {
             mem[word][byte] = program[i];    //	loading program to memory from buffer
             byte++;
@@ -139,12 +139,12 @@ void load() {
     exit(0);
 }
 
-void startexecution() {
+void start_execution() {
     os.ic = 0;
-    executeuserprogram();
+    execute_user_program();
 }
 
-void executeuserprogram() {
+void execute_user_program() {
     int i;
     do {
         for (i = 0; i < 4; i++)
@@ -191,7 +191,7 @@ void executeuserprogram() {
     } while (1);
 }
 
-void clearmemory() {
+void clear_memory() {
     int i, j;
     for (i = 0; i < 100; i++)
         for (j = 0; j < 4; j++)
