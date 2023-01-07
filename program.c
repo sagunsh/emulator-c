@@ -4,19 +4,19 @@
 
 struct cpu    //	cpu components
 {
-    char ir[4];    //	instruction register
+    char ir[4];    //	4 bytes instruction register
     int ic;        //	instruction counter
     int t;        //	toggle
-    char r[4];    //	general register
+    char r[4];    //	data register
 };
 
-/*	Global variables	*/
+//	Global variables based on machine specification
 struct cpu os;
 int word, byte, address, si;
 char mem[100][4];    //	memory
 FILE *fp1, *fp2;
 
-/*	Function prototype	*/
+//	Function prototypes
 void mos();
 
 void read();        //	si=1
@@ -28,8 +28,9 @@ void start_execution();
 
 void execute_user_program();
 
-int to_int(char, char);    //	convert character to integer
-void clear_memory();        //	clear memory after execution of one program
+int to_int(char, char);
+
+void clear_memory();
 
 int main() {
     fp1 = fopen("input.txt", "r");
