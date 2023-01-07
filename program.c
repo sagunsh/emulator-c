@@ -181,9 +181,9 @@ void execute_user_program() {
             os.ir[3] = '0';
             address = to_int(os.ir[2], os.ir[3]);
             si = 2;
-        } else if (os.ir[0] == 'H')
+        } else if (os.ir[0] == 'H') {
             si = 3;
-        else {
+        } else {
             printf("Error");
             exit(1);
         }
