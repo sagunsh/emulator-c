@@ -28,7 +28,7 @@ void start_execution();
 
 void execute_user_program();
 
-int to_int(char, char);
+int to_int(char, char); // convert string 40 to int 40
 
 void clear_memory();
 
