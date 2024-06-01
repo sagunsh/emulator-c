@@ -1,11 +1,8 @@
-# Emulator using C
-
-This project was done as a part of assessment for CSC 203 (Operating System) / Undergraduate / BSc.CSIT (Tribhuvan
-University) Nepal
+# Emulator in C
 
 ## Introduction
 
-It is an emulator with a basic operating system (OS) that runs on 5 basic instructions.
+It is an emulator that supports 7 instructions.
 
 The emulator tries to imitate the working of an OS by switching between user-mode and kernel-mode to perform different
 operations.
